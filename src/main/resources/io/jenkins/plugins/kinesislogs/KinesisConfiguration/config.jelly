@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+    <f:section title="${%AWS Kinesis Build Wrapper}">
+        <f:entry field="streamName" title="Stream Name">
+            <f:textbox/>
+        </f:entry>
+        <f:entry field="awsAccessKeyId" title="AWS Access Key ID">
+            <f:textbox/>
+        </f:entry>
+        <f:entry field="awsSecretKey" title="AWS Secret Access Key">
+            <f:textbox/>
+        </f:entry>
+        <f:entry field="awsRegion" title="AWS Region">
+            <f:textbox/>
+        </f:entry>
+    </f:section>
+</j:jelly>
