@@ -33,7 +33,7 @@ public class KinesisOutputStream extends LineTransformationOutputStream {
     @Override
     public void close() throws IOException {
         delegate.close();
-        kinesis.close();
+        //kinesis.close();
         super.flush();
     }
 }
