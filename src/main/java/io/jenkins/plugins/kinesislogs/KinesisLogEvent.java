@@ -28,7 +28,7 @@ public final class KinesisLogEvent {
     public KinesisLogEvent(Run<?, ?> build, String message) {
         this.buildNumber = build.getNumber();
         this.jobName = build.getParent().getName();
-        this.jobUrl = Jenkins.getInstance().getRootUrl() + "/" + build.getUrl();
+        this.jobUrl = Jenkins.getInstance().getRootUrl() + build.getUrl();
         this.message = message;
         this.timestamp = Instant.now().toString();
     }
