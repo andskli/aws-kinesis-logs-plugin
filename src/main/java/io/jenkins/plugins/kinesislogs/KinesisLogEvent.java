@@ -24,6 +24,7 @@ public final class KinesisLogEvent {
     private String message;
     private String jobUrl;
     private String timestamp; // UTC Timestamp
+    private boolean isBuilding;
 
     public KinesisLogEvent(Run<?, ?> build, String message) {
         this.buildNumber = build.getNumber();
@@ -31,6 +32,7 @@ public final class KinesisLogEvent {
         this.jobUrl = Jenkins.getInstance().getRootUrl() + build.getUrl();
         this.message = message;
         this.timestamp = Instant.now().toString();
+        this.isBuilding = build.isBuilding();
     }
 
     public int getBuildNumber() {
@@ -51,6 +53,10 @@ public final class KinesisLogEvent {
 
     public String getTimestamp() {
         return timestamp;
+    }
+
+    public boolean isBuilding() {
+        return isBuilding;
     }
 
     public byte[] toJsonAsBytes() {
